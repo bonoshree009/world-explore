@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import Country from './Country/country';
+import './countries.css'
 
 const Countries = ({countriespromise}) => {
 
@@ -7,12 +8,14 @@ const Countries = ({countriespromise}) => {
     const countries = countriesData.countries
 
     return (
-        <div>
-           <h1>in the countries :{countries.length}</h1> 
+        <>
+         <h1>in the countries :{countries.length}</h1>
+        <div className='grid'>
            {
             countries.map(country => <Country key ={country.cca3.cca3}country={country}></Country>)
            }
         </div>
+        </>
     );
 };
 
